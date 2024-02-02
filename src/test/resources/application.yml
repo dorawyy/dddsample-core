@@ -1,3 +1,15 @@
+spring:
+    dataSource:
+        url: jdbc:hsqldb:mem:dddsample_test;DB_CLOSE_DELAY=-1
+        # db_name: dddsample_test
+        driver-class-name: org.hsqldb.jdbc.JDBCDriver
+        username: SA
+        password: ""
+    jpa: 
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+
 server:
     servlet:
         context-path: /dddsample
@@ -14,15 +26,3 @@ uploadDirectory: /tmp/upload
 parseFailureDirectory: /tmp/failed
 
 brokerUrl: "vm://localhost?broker.persistent=false&broker.useJmx=false"
-
-spring:
-    dataSource:
-        db_name: dddsample
-        driver-class-name: org.hsqldb.jdbc.JDBCDriver
-        url: jdbc:hsqldb:mem:dddsample;DB_CLOSE_DELAY=-1
-        username: sa
-        password: ""
-    jpa: 
-        hibernate:
-            ddl-auto: update
-        show-sql: true
